@@ -1,5 +1,6 @@
 import React from "react";
-import LayoutWrapper from "./styles/layout";
+import LayoutWrapper from "./styles/LayoutWrapper";
+import Sidebar from "./Sidebar";
 const Layout = ({ children }) => {
   return (
     <LayoutWrapper>
@@ -8,8 +9,8 @@ const Layout = ({ children }) => {
           <h1>Header</h1>
         </div>
         <div className="page-body">
-          <div className="sitebar">
-            <h2>SiteBar</h2>
+          <div className="sidebar">
+            <Sidebar />
           </div>
           <div> {children}</div>
         </div>
