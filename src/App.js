@@ -1,0 +1,17 @@
+import React from "react";
+import "./App.css";
+import Layout from "./components/Layout";
+
+function App() {
+  return (
+    <div className="App">
+      <Layout>
+        <div className="main-content">
+          <h1>Hello World</h1>
+        </div>
+      </Layout>
+    </div>
+  );
+}
+
+export default App;
