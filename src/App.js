@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import IssueList from "./components/IssueList";
+import Loading from "./components/Loading";
 
 import "./App.css";
 import Layout from "./components/Layout";
@@ -17,6 +18,7 @@ function App() {
               path="/open-issues"
               render={props => <IssueList {...props} />}
             />
+            <Route path="/create-new-issue" component={Loading} />
           </Switch>
         </Layout>
       </Router>
