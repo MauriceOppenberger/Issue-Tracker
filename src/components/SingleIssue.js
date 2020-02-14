@@ -1,7 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SingleIssueWrapper from "./styles/SingleIssueWrapper";
+import Loading from "./Loading";
 
-const SingleIssue = () => {
+const SingleIssue = props => {
+  const [loading, setLoading] = useState(true);
+  const [index, setIndex] = useState(null);
+
+  console.log(props);
+
+  useEffect(() => {
+    console.log("effect", index, loading);
+    if (index !== props.id) {
+      setLoading(true);
+    }
+    setTimeout(() => {
+      setLoading(false);
+      setIndex(props.id);
+    }, 1500);
+  }, [index, props.id, loading]);
+  if (loading) {
+    return (
+      <SingleIssueWrapper>
+        <div className="issue-container">
+          <div style={{ width: "250px", margin: "0 auto" }}>
+            <Loading />
+          </div>
+        </div>
+      </SingleIssueWrapper>
+    );
+  }
   return (
     <SingleIssueWrapper>
       <div className="issue-container">

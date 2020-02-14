@@ -1,10 +1,42 @@
 import React, { useEffect, useState } from "react";
 import SingleIssue from "./SingleIssue";
-
+import Loading from "./Loading";
 import IssueListWrapper from "./styles/IssueListWrapper";
 const IssueList = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState({
+    id: null,
+    open: false
+  });
+  const [loading, setLoading] = useState(true);
+
   const issues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+  useEffect(() => {
+    if (loading) {
+      setTimeout(() => {
+        setLoading(false);
+      }, 1500);
+    }
+  }, [loading]);
+  const handleClick = id => {
+    setOpen({ id: id, open: true });
+  };
+
+  if (loading) {
+    return (
+      <IssueListWrapper>
+        <div className="list-container">
+          <div className="list-info">
+            <p>Page 1 of 45 open issues </p>
+            <p>Priority: All</p>
+          </div>
+          <div style={{ width: "250px", margin: "0 auto" }}>
+            <Loading />
+          </div>
+        </div>
+      </IssueListWrapper>
+    );
+  }
   return (
     <IssueListWrapper>
       <div className="list-container">
@@ -15,7 +47,7 @@ const IssueList = () => {
         <ul className="issue-list">
           {issues.map(el => {
             return (
-              <li className="list-item" onClick={() => setOpen(true)}>
+              <li className="list-item" onClick={() => handleClick(el)}>
                 <div className="issue-container">
                   <p>Priority: HIGH</p>
                   <h2>Brooklyn irony organic single-origin coffee meggings</h2>
@@ -36,7 +68,7 @@ const IssueList = () => {
           <button className="button">4</button>
         </div>
       </div>
-      {open && <SingleIssue />}
+      {open.open && <SingleIssue id={open.id} />}
     </IssueListWrapper>
   );
 };

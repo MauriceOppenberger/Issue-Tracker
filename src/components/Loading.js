@@ -6,7 +6,7 @@ const Loading = () => {
   useEffect(() => {
     setTimeout(() => {
       updateText(prevState => {
-        return text === "...Fetching Data" ? "Fetching Data" : `.${prevState}`;
+        return text === "Fetching Data..." ? "Fetching Data" : `${prevState}.`;
       });
     }, 500);
   }, [text]);
