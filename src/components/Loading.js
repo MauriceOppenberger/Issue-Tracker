@@ -8,7 +8,7 @@ const Loading = () => {
       updateText(prevState => {
         return text === "Fetching Data..." ? "Fetching Data" : `${prevState}.`;
       });
-    }, 500);
+    }, 300);
   }, [text]);
 
   return (
