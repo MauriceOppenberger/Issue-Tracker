@@ -4,21 +4,49 @@ const IssueListWrapper = styled.div`
   display: grid;
   grid-template-columns: 30vw auto;
   padding: 0 2rem;
-
+  .list-info {
+    padding: 0 1rem;
+    color: #888;
+    font-size: 0.9rem;
+  }
   .list-container {
+    margin-bottom: 3rem;
   }
   .issue-container {
     padding: 1rem;
-    border: 1px solid;
+    border: 1px solid var(--darkGrey);
+    border-radius: 20px;
   }
   .issue-list {
     margin: 0;
-    padding: 0;
+    padding: 1rem;
   }
   .list-item {
     list-style: none;
 
     margin-bottom: 1rem;
+  }
+  .meta-info {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+  .pagination {
+    text-align: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    .button {
+      border: none;
+      font-size: 1rem;
+      margin: 0 0.2rem;
+    }
+    .button.active {
+      border-bottom: 1px solid;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
   }
 `;
 
