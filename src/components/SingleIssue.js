@@ -37,10 +37,12 @@ const SingleIssue = props => {
         <br />
         <br />
         <hr />
-        <p>priority</p>
-        <p>opened</p>
+        <div className="issue-info">
+          <p>priority</p>
+          <p>opened</p>
 
-        <p>creator</p>
+          <p>creator</p>
+        </div>
         <p>
           {" "}
           Typewriter cliche crucifix bitters. Hot chicken tofu bespoke, direct

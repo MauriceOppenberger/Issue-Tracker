@@ -19,7 +19,16 @@ function App() {
               path="/open-issues"
               render={props => <IssueList {...props} />}
             />
-            <Route path="/closed-issues" component={Loading} />
+            <Route
+              path="/closed-issues"
+              render={props => {
+                return (
+                  <div style={{ padding: "0 2rem" }}>
+                    <Loading {...props} />
+                  </div>
+                );
+              }}
+            />
             <Route path="/create-new-issue" component={NewIssueForm} />
           </Switch>
         </Layout>

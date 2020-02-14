@@ -26,13 +26,7 @@ const IssueList = () => {
     return (
       <IssueListWrapper>
         <div className="list-container">
-          <div className="list-info">
-            <p>Page 1 of 45 open issues </p>
-            <p>Priority: All</p>
-          </div>
-          <div style={{ width: "250px", margin: "0 auto" }}>
-            <Loading />
-          </div>
+          <Loading />
         </div>
       </IssueListWrapper>
     );

@@ -7,31 +7,33 @@ const NewIssueForm = props => {
     <NewIssueFormWrapper>
       <form>
         <p>
-          <label>
-            Set Priority
+          <label className="priority-field">
+            Set Priority:
             <select>
               <option>HIGH</option>
-              <option>MEDIM</option>
+              <option>MEDIUM</option>
               <option>LOW</option>
             </select>
           </label>
         </p>
         <p>
+          <label className="upload-field" for="file">
+            Upload Supporting Documents
+          </label>
           <input type="file" name="file" id="file"></input>
-          {/* <label for="file">Uploade Supporting document</label> */}
         </p>
         <p>
           <label>
-            <input type="text" placeholder="Title"></input>
+            <input className="title" type="text" placeholder="Title:"></input>
           </label>
         </p>
         <p>
           <label>
-            <textarea type="text" placeholder="Describe your issue"></textarea>
+            <textarea type="text" placeholder="Describe the issue:"></textarea>
           </label>
         </p>
         <button
-          className="btn nav-button"
+          className="btn form-button"
           onClick={() => props.history.push("/open-issues")}
         >
           Submit
