@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import SidebarWrapper from "./styles/SidebarWrapper";
 
 const Sidebar = () => {
@@ -8,13 +8,19 @@ const Sidebar = () => {
       <nav className="sidebar-nav">
         <ul className="nav-list">
           <li className="nav-item">
-            <button className="btn nav-button">Open Issues</button>
+            <Link to="/open-issues">
+              <button className="btn nav-button">Open Issues</button>
+            </Link>
           </li>
           <li className="nav-item">
-            <button className="btn nav-button">Closed Issues</button>
+            <Link to="/closed-issues">
+              <button className="btn nav-button">Closed Issues</button>
+            </Link>
           </li>
           <li className="nav-item">
-            <button className="btn nav-button">New Issue</button>
+            <Link to="/create-new-issue">
+              <button className="btn nav-button">New Issue</button>
+            </Link>
           </li>
         </ul>
       </nav>

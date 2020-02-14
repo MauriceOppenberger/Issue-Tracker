@@ -1,9 +1,13 @@
 import styled from "styled-components";
 
-const LayoutWrapper = styled.div`
+const LayoutWrapper = styled.main`
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
   .page-body {
     display: grid;
-    grid-template-columns: 20vw auto;
+    grid-template-columns: 15vw auto;
   }
 
   .btn {
