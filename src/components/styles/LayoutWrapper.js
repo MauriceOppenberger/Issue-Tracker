@@ -11,14 +11,21 @@ const LayoutWrapper = styled.main`
   }
 
   .btn {
-    min-width: 150px;
+    width: 150px;
     padding: 8px 16px;
-    border: 1px solid;
+    border: 1px solid var(--mainBlack);
     border-radius: 20px;
     font-size: 1rem;
+    box-shadow: inset 0 0 0 0 var(--mainBlack);
+    -webkit-transition: all ease-out 0.5s;
+    -moz-transition: all ease-out 0.5s;
+    transition: all ease-out 0.5s;
   }
-  .btn:hover,
-  .btn:active {
+  .btn:hover {
+    color: var(--mainWhite);
+    box-shadow: inset 150px 0 0 0.01px var(--mainBlack);
+  }
+  .active button {
     background: var(--mainBlack);
     color: var(--mainWhite);
   }

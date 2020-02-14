@@ -23,8 +23,13 @@ const IssueListWrapper = styled.div`
   }
   .list-item {
     list-style: none;
-
+    box-shadow: var(--lightShadow);
+    border-radius: 20px;
     margin-bottom: 1rem;
+  }
+  .list-item:hover {
+    box-shadow: var(--darkShadow);
+    border-radius: 20px;
   }
   .meta-info {
     display: flex;

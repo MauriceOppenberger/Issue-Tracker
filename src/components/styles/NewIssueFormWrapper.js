@@ -50,8 +50,8 @@ const NewIssueFormWrapper = styled.div`
     background: var(--mainGrey);
   }
   .form-button:hover {
-    border: none !important;
-    background: green !important;
+    /* background: green !important; */
+    box-shadow: inset 150px 0 0 0.01px green !important;
   }
 `;
 
