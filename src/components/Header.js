@@ -11,6 +11,16 @@ const Header = () => {
             <h1>Issue Tracker 2.0</h1>
           </Link>
         </div>
+        <div className="primary-nav">
+          <ul className="primary-nav-list">
+            <li className="primary-nav-item">
+              <Link to="/login">Sign In</Link>
+            </li>
+            <li className="primary-nav-item">
+              <Link to="/signup">Sign Up</Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </HeaderWrapper>
   );
