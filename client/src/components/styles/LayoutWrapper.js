@@ -12,8 +12,9 @@ const LayoutWrapper = styled.main`
 
   .btn {
     width: 150px;
-    padding: 8px 16px;
-    border: 1px solid var(--mainBlack);
+    padding: 8px 0;
+    margin: 0 auto;
+    border: 1px solid var(--darkGrey);
     border-radius: 20px;
     font-size: 1rem;
     box-shadow: inset 0 0 0 0 var(--mainBlack);

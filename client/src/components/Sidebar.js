@@ -9,17 +9,17 @@ const Sidebar = () => {
         <ul className="nav-list">
           <li className="nav-item">
             <NavLink to="/open-issues" activeClassName="active">
-              <button className="btn nav-button">Open Issues</button>
+              <div className="btn nav-button">Open Issues</div>
             </NavLink>
           </li>
           <li className="nav-item">
             <NavLink to="/closed-issues">
-              <button className="btn nav-button">Closed Issues</button>
+              <div className="btn nav-button">Closed Issues</div>
             </NavLink>
           </li>
           <li className="nav-item">
             <NavLink to="/create-new-issue">
-              <button className="btn nav-button">New Issue</button>
+              <div className="btn nav-button">New Issue</div>
             </NavLink>
           </li>
         </ul>

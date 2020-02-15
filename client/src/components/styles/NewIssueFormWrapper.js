@@ -22,7 +22,7 @@ const NewIssueFormWrapper = styled.div`
   .upload-field,
   .priority-field {
     padding: 8px 16px;
-    border: 1px solid #eee;
+    border: 1px solid var(--darkGrey);
     border-radius: 10px;
     background: var(--mainGrey);
     font-size: 1rem;
@@ -45,7 +45,7 @@ const NewIssueFormWrapper = styled.div`
     padding: 16px;
     width: 100%;
     min-height: 200px;
-    border: 1px solid #eee;
+    border: 1px solid var(--darkGrey);
     border-radius: 10px;
     background: var(--mainGrey);
   }
