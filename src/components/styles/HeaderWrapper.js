@@ -12,6 +12,11 @@ const HeaderWrapper = styled.div`
 
     padding: 0 2rem;
     margin: auto;
+    .logo-container {
+      width: max-content;
+    }
+    .logo-link {
+    }
     h1 {
       margin: 0;
     }

@@ -30,6 +30,7 @@ const IssueListWrapper = styled.div`
   .list-item:hover {
     box-shadow: var(--darkShadow);
     border-radius: 20px;
+    cursor: pointer;
   }
   .meta-info {
     display: flex;

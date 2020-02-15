@@ -6,9 +6,11 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <div className="header-container">
-        <Link to="/">
-          <h1>Issue Tracker 2.0</h1>
-        </Link>
+        <div className="logo-container">
+          <Link to="/" className="logo-link">
+            <h1>Issue Tracker 2.0</h1>
+          </Link>
+        </div>
       </div>
     </HeaderWrapper>
   );

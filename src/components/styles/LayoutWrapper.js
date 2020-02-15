@@ -17,9 +17,9 @@ const LayoutWrapper = styled.main`
     border-radius: 20px;
     font-size: 1rem;
     box-shadow: inset 0 0 0 0 var(--mainBlack);
-    -webkit-transition: all ease-out 0.5s;
-    -moz-transition: all ease-out 0.5s;
-    transition: all ease-out 0.5s;
+    -webkit-transition: all ease-out 0.3s;
+    -moz-transition: all ease-out 0.3s;
+    transition: all ease-out 0.3s;
   }
   .btn:hover {
     color: var(--mainWhite);
