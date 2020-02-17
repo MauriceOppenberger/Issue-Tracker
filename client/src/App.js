@@ -14,21 +14,9 @@ function App() {
         <Layout>
           <Switch>
             <Route exact path="/" render={() => <h1>Hello World</h1>} />
-            <Route
-              exact
-              path="/open-issues"
-              render={props => <IssueList {...props} />}
-            />
-            <Route
-              path="/closed-issues"
-              render={props => {
-                return (
-                  <div style={{ padding: "0 2rem" }}>
-                    <Loading {...props} />
-                  </div>
-                );
-              }}
-            />
+            <Route path="/signup" render={() => <h1>Hello Signup Route</h1>} />
+            <Route path="/open-issues" component={IssueList} />
+            <Route path="/closed-issues" component={Loading} />
             <Route path="/create-new-issue" component={NewIssueForm} />
           </Switch>
         </Layout>
