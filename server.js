@@ -13,6 +13,11 @@ app.use(bodyParser.json());
 // });
 app.use("/auth", authRoute);
 
+app.use((error, req, res, next) => {
+  res.status(error.statusCode).json({ message: error.message });
+  next();
+});
+
 mongoose
   .connect(
     "mongodb+srv://mauriceoppenberger:fjlo180218@cluster0-izp9a.mongodb.net/Issue-Tracker"
