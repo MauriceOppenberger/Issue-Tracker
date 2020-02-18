@@ -8,6 +8,9 @@ const NewIssueFormWrapper = styled.div`
   p {
     margin-bottom: 3rem;
   }
+  p.error {
+    color: red;
+  }
   #file {
     display: none;
   }
@@ -52,6 +55,19 @@ const NewIssueFormWrapper = styled.div`
   .form-button:hover {
     /* background: green !important; */
     box-shadow: inset 150px 0 0 0.01px green !important;
+  }
+
+  .signup p {
+    display: flex;
+    flex-flow: row wrap;
+
+    label {
+      flex: 1 100%;
+      margin-bottom: 0.5rem;
+    }
+    input {
+      width: 400px;
+    }
   }
 `;
 

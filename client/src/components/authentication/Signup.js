@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import SignupWrapper from "./styles/SignupWrapper";
+
+import FormWrapper from "../styles/FormWrapper";
 
 const Signup = props => {
   const [form, updateForm] = useState({
@@ -7,6 +10,7 @@ const Signup = props => {
     email: "",
     password: ""
   });
+  const [error, updateError] = useState(null);
   const handleInput = e => {
     e.persist();
 
@@ -25,9 +29,14 @@ const Signup = props => {
       body: JSON.stringify(form)
     })
       .then(result => {
-        console.log(typeof result.status);
+        if (result.status === 403) {
+          const error = new Error(
+            "email already exists, please use a valid email address"
+          );
+          throw error;
+        }
         if (result.status !== 200 && result.status !== 201) {
-          const error = new Error("not allowed");
+          const error = new Error("sign up failed");
           throw error;
         }
         return result.json();
@@ -36,61 +45,59 @@ const Signup = props => {
         console.log(res);
         props.history.push("/login");
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        console.log(err);
+        updateError(err.message);
+      });
   };
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <FormWrapper>
+      <form className="signup" onSubmit={handleSubmit}>
         <p>
-          <label>
-            FirstName:
-            <input
-              name="firstName"
-              type="text"
-              value={form.firstName}
-              onChange={handleInput}
-              placeholder="Jane"
-            ></input>
-          </label>
+          <label>FirstName:</label>
+          <input
+            name="firstName"
+            type="text"
+            value={form.firstName}
+            onChange={handleInput}
+            placeholder="Jane"
+          ></input>
         </p>
         <p>
-          <label>
-            LastName:
-            <input
-              name="lastName"
-              type="text"
-              value={form.lastName}
-              onChange={handleInput}
-              placeholder="Doe"
-            ></input>
-          </label>
+          <label>LastName:</label>
+          <input
+            name="lastName"
+            type="text"
+            value={form.lastName}
+            onChange={handleInput}
+            placeholder="Doe"
+          ></input>
         </p>
         <p>
-          <label>
-            Email Address:
-            <input
-              type="email"
-              name="email"
-              value={form.email}
-              onChange={handleInput}
-              placeholder="jaondoe@gmail.com"
-            ></input>
-          </label>
+          <label>Email Address:</label>
+          <input
+            type="email"
+            name="email"
+            value={form.email}
+            onChange={handleInput}
+            placeholder="jaondoe@gmail.com"
+          ></input>
         </p>
         <p>
-          <label>
-            Password:
-            <input
-              name="password"
-              type="password"
-              value={form.password}
-              onChange={handleInput}
-            ></input>
-          </label>
+          <label>Password:</label>
+          <input
+            name="password"
+            type="password"
+            value={form.password}
+            onChange={handleInput}
+          ></input>
         </p>
-        <button type="submit">Signup</button>
+        {error && <p className="error">{error}</p>}
+        <button className="btn" type="submit">
+          Signup
+        </button>
       </form>
-    </div>
+    </FormWrapper>
   );
 };
 

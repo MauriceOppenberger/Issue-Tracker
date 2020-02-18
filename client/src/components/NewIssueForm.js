@@ -1,10 +1,10 @@
 import React from "react";
-import NewIssueFormWrapper from "./styles/NewIssueFormWrapper";
+import FormWrapper from "./styles/FormWrapper";
 
 const NewIssueForm = props => {
   console.log(props);
   return (
-    <NewIssueFormWrapper>
+    <FormWrapper>
       <form>
         <p>
           <label className="priority-field">
@@ -39,7 +39,7 @@ const NewIssueForm = props => {
           Submit
         </button>
       </form>
-    </NewIssueFormWrapper>
+    </FormWrapper>
   );
 };
 
