@@ -57,7 +57,7 @@ const NewIssueFormWrapper = styled.div`
     box-shadow: inset 150px 0 0 0.01px green !important;
   }
 
-  .signup p {
+  .authForm p {
     display: flex;
     flex-flow: row wrap;
 

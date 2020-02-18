@@ -1,19 +1,15 @@
 import React, { useState } from "react";
-import SignupWrapper from "./styles/SignupWrapper";
+import FromWrapper from "../styles/FormWrapper";
 
-import FormWrapper from "../styles/FormWrapper";
-
-const Signup = props => {
+const Login = props => {
   const [form, updateForm] = useState({
-    firstName: "",
-    lastName: "",
     email: "",
     password: ""
   });
-  const [error, updateError] = useState(null);
+  const [error, updateError] = useState();
+
   const handleInput = e => {
     e.persist();
-
     updateForm(prevState => ({
       ...prevState,
       [e.target.name]: e.target.value
@@ -21,7 +17,7 @@ const Signup = props => {
   };
   const handleSubmit = e => {
     e.preventDefault();
-    fetch("http://localhost:3000/auth/signup", {
+    fetch("http://localhost:3000/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -29,50 +25,27 @@ const Signup = props => {
       body: JSON.stringify(form)
     })
       .then(result => {
-        if (result.status === 403) {
-          const error = new Error(
-            "email already exists, please use a valid email address"
-          );
+        if (result.status === 401 || result.status === 403) {
+          const error = new Error("Email or Password invalid");
           throw error;
         }
-        if (result.status !== 200 && result.status !== 201) {
-          const error = new Error("sign up failed");
+        if (result.status !== 200) {
+          const error = new Error("Faild to Fetch Data from Server");
           throw error;
         }
         return result.json();
       })
       .then(res => {
-        console.log(res);
-        props.history.push("/login");
+        props.history.push({ pathname: "/", state: { user: res.message } });
       })
       .catch(err => {
-        console.log(err);
         updateError(err.message);
+        console.log(err);
       });
   };
   return (
-    <FormWrapper>
+    <FromWrapper>
       <form className="authForm" onSubmit={handleSubmit}>
-        <p>
-          <label>FirstName:</label>
-          <input
-            name="firstName"
-            type="text"
-            value={form.firstName}
-            onChange={handleInput}
-            placeholder="Jane"
-          ></input>
-        </p>
-        <p>
-          <label>LastName:</label>
-          <input
-            name="lastName"
-            type="text"
-            value={form.lastName}
-            onChange={handleInput}
-            placeholder="Doe"
-          ></input>
-        </p>
         <p>
           <label>Email Address:</label>
           <input
@@ -80,7 +53,7 @@ const Signup = props => {
             name="email"
             value={form.email}
             onChange={handleInput}
-            placeholder="jaondoe@gmail.com"
+            placeholder="janedoe@gmail.com"
           ></input>
         </p>
         <p>
@@ -94,11 +67,11 @@ const Signup = props => {
         </p>
         {error && <p className="error">{error}</p>}
         <button className="btn" type="submit">
-          Signup
+          Login
         </button>
       </form>
-    </FormWrapper>
+    </FromWrapper>
   );
 };
 
-export default Signup;
+export default Login;

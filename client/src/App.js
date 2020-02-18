@@ -4,6 +4,7 @@ import IssueList from "./components/IssueList";
 import Loading from "./components/Loading";
 import NewIssueForm from "./components/NewIssueForm";
 import Signup from "./components/authentication/Signup";
+import Login from "./components/authentication/Login";
 
 import "./App.css";
 import Layout from "./components/Layout";
@@ -14,8 +15,9 @@ function App() {
       <Router>
         <Layout>
           <Switch>
-            <Route exact path="/" render={() => <h1>Hello World</h1>} />
+            <Route exact path="/" render={props => <h1>Hello "World"</h1>} />
             <Route path="/signup" component={Signup} />
+            <Route path="/login" component={Login} />
             <Route path="/open-issues" component={IssueList} />
             <Route path="/closed-issues" component={Loading} />
             <Route path="/create-new-issue" component={NewIssueForm} />
