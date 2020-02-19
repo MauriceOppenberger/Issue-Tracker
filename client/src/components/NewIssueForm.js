@@ -17,7 +17,7 @@ const NewIssueForm = props => {
           </label>
         </p>
         <p>
-          <label className="upload-field" for="file">
+          <label className="upload-field" htmlFor="file">
             Upload Supporting Documents
           </label>
           <input type="file" name="file" id="file"></input>

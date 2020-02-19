@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import FromWrapper from "../styles/FormWrapper";
 
 const Login = props => {
+  console.log(props);
   const [form, updateForm] = useState({
     email: "",
     password: ""
@@ -19,6 +20,7 @@ const Login = props => {
     e.preventDefault();
     fetch("http://localhost:3000/auth/login", {
       method: "POST",
+      credentials: "include",
       headers: {
         "Content-Type": "application/json"
       },
@@ -36,6 +38,7 @@ const Login = props => {
         return result.json();
       })
       .then(res => {
+        props.auth();
         props.history.push({ pathname: "/", state: { user: res.message } });
       })
       .catch(err => {
