@@ -1,12 +1,17 @@
 import styled from "styled-components";
 
 const NewIssueFormWrapper = styled.div`
+  h1 {
+    width: 50vw;
+    margin-left: 8vmax;
+    text-align: center;
+  }
   form {
     width: 50vw;
     margin-left: 8vmax;
   }
   p {
-    margin-bottom: 3rem;
+    /* margin-bottom: 3rem; */
   }
   p.error {
     color: red;
@@ -24,7 +29,7 @@ const NewIssueFormWrapper = styled.div`
   input,
   .upload-field,
   .priority-field {
-    padding: 8px 16px;
+    /* padding: 8px 16px; */
     border: 1px solid var(--darkGrey);
     border-radius: 10px;
     background: var(--mainGrey);

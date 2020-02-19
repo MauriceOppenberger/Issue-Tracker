@@ -3,7 +3,6 @@ import styled from "styled-components";
 const IssueListWrapper = styled.div`
   display: grid;
   grid-template-columns: 30vw auto;
-  padding: 0 2rem;
   .list-info {
     padding: 0 1rem;
     color: #888;

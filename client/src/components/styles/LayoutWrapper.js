@@ -9,7 +9,9 @@ const LayoutWrapper = styled.main`
     display: grid;
     grid-template-columns: 15vw auto;
   }
-
+  .main {
+    padding: 0 2rem;
+  }
   .btn {
     width: 150px;
     padding: 8px 0;
