@@ -15,7 +15,7 @@ const IssueList = () => {
     if (loading) {
       setTimeout(() => {
         setLoading(false);
-      }, 1500);
+      }, 1000);
     }
   }, [loading]);
   const handleClick = id => {

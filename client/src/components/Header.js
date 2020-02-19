@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import HeaderWrapper from "./styles/HeaderWrapper";
 import AuthContext from "../context/auth";
+import Button from "@material-ui/core/Button";
 
 const Header = () => {
   console.log("header");
@@ -22,16 +23,37 @@ const Header = () => {
                     onClick={() => context.updateIsAuth(false)}
                     className="primary-nav-item"
                   >
-                    <Link to="/">Log Out</Link>
+                    <Link to="/">
+                      {" "}
+                      <Button size="medium" className="" type="submit">
+                        Logout
+                      </Button>
+                    </Link>
                   </li>
                 </ul>
               ) : (
                 <ul className="primary-nav-list">
                   <li className="primary-nav-item">
-                    <Link to="/login">Log In</Link>
+                    <Link to="/login">
+                      {" "}
+                      <Button size="medium" className="" type="submit">
+                        Log In
+                      </Button>
+                    </Link>
                   </li>
                   <li className="primary-nav-item">
-                    <Link to="/signup">Sign Up</Link>
+                    <Link to="/signup">
+                      {" "}
+                      <Button
+                        variant="contained"
+                        size="medium"
+                        color="primary"
+                        className=""
+                        type="submit"
+                      >
+                        Sign Up
+                      </Button>
+                    </Link>
                   </li>
                 </ul>
               )}

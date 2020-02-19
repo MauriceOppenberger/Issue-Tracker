@@ -14,20 +14,12 @@ const LayoutWrapper = styled.main`
   }
   .btn {
     width: 150px;
-    padding: 8px 0;
+    min-width: max-content;
+    background: #ececec;
     margin: 0 auto;
-    border: 1px solid var(--darkGrey);
-    border-radius: 20px;
-    font-size: 1rem;
-    box-shadow: inset 0 0 0 0 var(--mainBlack);
-    -webkit-transition: all ease-out 0.3s;
-    -moz-transition: all ease-out 0.3s;
-    transition: all ease-out 0.3s;
+    /* font-size: 1rem; */
   }
-  .btn:hover {
-    color: var(--mainWhite);
-    box-shadow: inset 150px 0 0 0.01px var(--mainBlack);
-  }
+
   .active button {
     background: var(--mainBlack);
     color: var(--mainWhite);
