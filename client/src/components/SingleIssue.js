@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SingleIssueWrapper from "./styles/SingleIssueWrapper";
 import Loading from "./Loading";
+import Button from "@material-ui/core/Button";
 
 const SingleIssue = props => {
   const [loading, setLoading] = useState(true);
@@ -16,7 +17,7 @@ const SingleIssue = props => {
     setTimeout(() => {
       setLoading(false);
       setIndex(props.id);
-    }, 1500);
+    }, 1000);
   }, [index, props.id, loading]);
   if (loading) {
     return (
@@ -33,7 +34,15 @@ const SingleIssue = props => {
     <SingleIssueWrapper>
       <div className="issue-container">
         <h2>Brooklyn irony organic single-origin coffee meggings</h2>
-        <button className="btn nav-button">Close Issue</button>
+        <Button
+          variant="contained"
+          size="medium"
+          className="btn"
+          color="green"
+          type="submit"
+        >
+          Resolve
+        </Button>
         <br />
         <br />
         <hr />
@@ -74,7 +83,14 @@ const SingleIssue = props => {
           </p>
         </div>
         <div style={{ textAlign: "center", padding: "1rem" }}>
-          <button className="btn nav-button">More Details</button>
+          <Button
+            variant="contained"
+            size="large"
+            className="btn"
+            type="submit"
+          >
+            More Details
+          </Button>
         </div>
       </div>
     </SingleIssueWrapper>
